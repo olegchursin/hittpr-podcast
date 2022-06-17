@@ -12,8 +12,11 @@ const Layout: React.FC<any> = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
-      <main>{children}</main>
+      <div className="content">
+        <Navbar />
+        <main>{children}</main>
+      </div>
+
       <Footer />
     </>
   );
