@@ -1,24 +1,40 @@
-import { useTheme } from 'next-themes';
+import Link from 'next/link';
+import Logo from './logo';
+import NavLink from './navLink';
+import ThemeSwitch from './themeSwitch';
 
-import { FiMoon, FiSun } from 'react-icons/fi';
+const navLinks = [
+  {
+    id: 'episodes',
+    href: '/episodes',
+    label: 'Эпизоды'
+  },
+  {
+    id: 'about',
+    href: '/about',
+    label: 'О нас'
+  }
+];
 
 const Navbar: React.FC = () => {
-  const { theme, setTheme } = useTheme();
-
-  const colorModeIcon = theme === 'dark' ? <FiSun /> : <FiMoon />;
-
   return (
-    <header>
-      Navbar{' '}
-      <button
-        aria-label="Toggle Dark Mode"
-        type="button"
-        className="p-3 h-12 w-12 order-2 md:order-3"
-        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      >
-        {colorModeIcon}
-      </button>
-    </header>
+    <nav className="drop-shadow-md">
+      <div className="container flex items-center justify-between p-6">
+        <Link href="/">
+          <Logo />
+        </Link>
+
+        <div className="flex items-center gap-6">
+          {navLinks.map(link => {
+            return (
+              <NavLink key={link.id} href={link.href} label={link.label} />
+            );
+          })}
+
+          <ThemeSwitch />
+        </div>
+      </div>
+    </nav>
   );
 };
 
