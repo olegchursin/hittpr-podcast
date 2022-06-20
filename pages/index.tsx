@@ -1,11 +1,12 @@
-import type { NextPage } from 'next';
 import Hero from '../components/hero';
+import SubscribeCta from '../components/subscribeCta';
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
     <>
       <Hero />
-      <div>More content</div>
+      <SubscribeCta />
     </>
   );
 };
