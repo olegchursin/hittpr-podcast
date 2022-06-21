@@ -2,7 +2,7 @@ import { FaPlay } from 'react-icons/fa';
 
 const Hero: React.FC = () => {
   return (
-    <div className="bg-accent-dark h-132 bg-[url('/img/hero.webp')] bg-cover">
+    <div className="h-132 bg-[url('/img/hero.webp')] bg-cover brightness-90">
       <div className="container py-16 px-8 text-center text-white md:p-24 md:text-left">
         <span className="rounded-full bg-gradient-to-b from-cyan-500 to-blue-500 py-1 px-4 text-sm">
           ПОДКАСТ
